@@ -93,6 +93,7 @@ case "$stack" in
       libxtst6
       fonts-liberation
       libfribidi-dev
+      libffi
       libffi-dev
     "
     ;;
