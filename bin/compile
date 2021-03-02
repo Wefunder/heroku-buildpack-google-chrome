@@ -68,8 +68,6 @@ case "$stack" in
     # the package list is found by using ci:debug then running ldd $GOOGLE_CHROME_BIN | grep not
     # also look here for more packages/notes https://developers.google.com/web/tools/puppeteer/troubleshooting
     PACKAGES="
-      libffi6
-      libffi-dev
       gconf-service
       libappindicator1
       libasound2
@@ -111,7 +109,9 @@ fi
 
 topic "Installing Google Chrome from the $channel channel."
 
-PACKAGES="$PACKAGES https://dl.google.com/linux/direct/google-chrome-${channel}_current_amd64.deb"
+#PACKAGES="$PACKAGES https://dl.google.com/linux/direct/google-chrome-${channel}_current_amd64.deb"
+VERSION="81.0.4044.129-1"
+PACKAGES="$PACKAGES https://dl.google.com/linux/direct/google-chrome-${channel}_${VERSION}_amd64.deb"
 
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
