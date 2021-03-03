@@ -113,9 +113,10 @@ PACKAGES="$PACKAGES http://mirrors.edge.kernel.org/ubuntu/pool/main/libf/libffi/
 
 topic "Installing Google Chrome from the $channel channel."
 
-#PACKAGES="$PACKAGES https://dl.google.com/linux/direct/google-chrome-${channel}_current_amd64.deb"
-VERSION="79.0.3945.130-1"
-PACKAGES="$PACKAGES http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-${channel}_${VERSION}_amd64.deb"
+PACKAGES="$PACKAGES https://dl.google.com/linux/direct/google-chrome-${channel}_current_amd64.deb"
+
+#VERSION="79.0.3945.130-1"
+#PACKAGES="$PACKAGES http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-${channel}_${VERSION}_amd64.deb"
 
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
@@ -145,7 +146,8 @@ mkdir -p $BUILD_DIR/.apt
 
 for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   topic "Installing $(basename $DEB)"
-  dpkg -x $DEB $BUILD_DIR/.apt/
+  #dpkg -x $DEB $BUILD_DIR/.apt/
+  apt install $DEB
 done
 
 topic "Writing profile script"
