@@ -116,6 +116,10 @@ topic "Installing Google Chrome from the $channel channel."
 
 PACKAGES="$PACKAGES https://dl.google.com/linux/direct/google-chrome-${channel}_current_amd64.deb"
 
+
+# What if we just use apt to install the chrome deb?
+PACKAGES="https://dl.google.com/linux/direct/google-chrome-${channel}_current_amd64.deb"
+
 #VERSION="79.0.3945.130-1"
 #PACKAGES="$PACKAGES http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-${channel}_${VERSION}_amd64.deb"
 
